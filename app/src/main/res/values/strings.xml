@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">BA</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_nominate">Nominate</string>
+    <string name="title_activity_vote">Vote</string>
+    <string-array name="counties_list">
+        <item>Baringo</item>
+        <item>Bomet</item>
+        <item>Bungoma</item>
+        <item>Busia</item>
+        <item>Elgeyo Marakwet</item>
+        <item>Embu</item>
+        <item>Garissa</item>
+        <item>Homabay</item>
+        <item>Isiolo</item>
+        <item>Kajiado</item>
+    </string-array>
+    <string-array name="nominees_list">
+        <item>Dr. Akumu Mwangi</item>
+        <item>DR. Justine Mutua</item>
+        <item>Nurse Evah Nganga</item>
+        <item>Recepsionist Betty </item>
+        <item>Nurse Jane Aduke</item>
+        <item>Cleaner John Mitei</item>
+        <item>Nurse Beatrice </item>
+        <item>Dr. Terry Miyo</item>
+
+    </string-array>
+    <string name="title_activity_votes_tally">VotesTally</string>
+</resources>
