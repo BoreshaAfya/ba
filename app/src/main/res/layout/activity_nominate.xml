@@ -341,6 +341,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/editText10"
-            android:background="#9EE17E" />
+            android:background="#9EE17E"
+            android:onClick="addContact"/>
     </RelativeLayout>
 </ScrollView>
