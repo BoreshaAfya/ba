@@ -36,13 +36,15 @@ public class Nominate extends Activity {
 
 
 
-        /*Button button1=(Button) findViewById(R.id.button1);
+        Button button1=(Button) findViewById(R.id.button1);
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(getBaseContext(), "Thank you for nominating a candidate, you can now vote! ", Toast.LENGTH_LONG).show();
                 startActivity(new Intent(Nominate.this, Vote.class));
+
             }
-        });*/
+        });
 
 
         Spinner staticSpinner = (Spinner) findViewById(R.id.county_spinner);
@@ -65,8 +67,7 @@ public class Nominate extends Activity {
             String county=  NomineeCounty.getText().toString();
             nomineeDBHelper =new NomineeDBHelper(context);
             sqLiteDatabase=nomineeDBHelper.getWritableDatabase();
-            nomineeDBHelper.addInformation(name, occupation, regno, workplace,county, sqLiteDatabase);
-            Toast.makeText(getBaseContext(), "Thank you for nominating YOUR candidate", Toast.LENGTH_LONG).show();
+            nomineeDBHelper.addInformation(name, occupation, regno, workplace, county, sqLiteDatabase);
             nomineeDBHelper.close();
 
         }
