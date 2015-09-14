@@ -12,12 +12,15 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 
 public class Nominate extends Activity {
-    EditText NomineeName, NomineeOccupation, NomineeRegNo, NomineeWorkplace, NomineeCounty;
+    EditText NomineeName,  NomineeRegNo, NomineeWorkplace, NomineeCounty;
+    RadioGroup NomineeOccupation;
     Context context=this;
     NomineeDBHelper nomineeDBHelper;
     SQLiteDatabase sqLiteDatabase;
@@ -29,7 +32,7 @@ public class Nominate extends Activity {
         setContentView(R.layout.activity_nominate);
 
         NomineeName=(EditText)findViewById(R.id.editText);
-        NomineeOccupation=(EditText)findViewById(R.id.editText5);
+        NomineeOccupation=(RadioGroup)findViewById(R.id.radiogrp);
         NomineeRegNo=(EditText)findViewById(R.id.editText2);
         NomineeWorkplace=(EditText)findViewById(R.id.editText3);
         NomineeCounty=(EditText)findViewById(R.id.editText7);
@@ -61,7 +64,7 @@ public class Nominate extends Activity {
         public void addContact(View view)
         {
             String name=NomineeName.getText().toString();
-            String occupation=NomineeOccupation.getText().toString();
+            String occupation= ((RadioButton)findViewById(NomineeOccupation.getCheckedRadioButtonId())).getText().toString();
             String regno=NomineeRegNo.getText().toString();
             String workplace=NomineeWorkplace.getText().toString();
             String county=  NomineeCounty.getText().toString();

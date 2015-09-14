@@ -11,8 +11,7 @@ import android.util.Log;
  */
 public class NomineeDBHelper  extends SQLiteOpenHelper{
     private static final String DATABASE_NAME="NOMINEEINFO.DB";
-    private static final int DATABASE_VERSION=2;
-
+    private static final int DATABASE_VERSION=1;
     private static final String CREATE_QUERY="CREATE TABLE "+ NomineeData.NewNomineeInfo.TABLE_NAME+
             "("+ NomineeData.NewNomineeInfo.NOMINEE_NAME+" TEXT,"+
             NomineeData.NewNomineeInfo.NOMINEE_OCCUPATION+" TEXT,"+

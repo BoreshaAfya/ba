@@ -64,13 +64,18 @@
 
 
 
-
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/radiogrp"
+            android:layout_below="@+id/jobttext"
+            android:layout_centerHorizontal="true">
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Doctor"
             android:id="@+id/radioButton"
-            android:layout_below="@+id/jobttext"
+            android:layout_below="@+id/radiogrp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
@@ -127,6 +132,7 @@
             android:layout_below="@+id/radioButton3"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
+        </RadioGroup>
 
         <TextView
             android:layout_width="fill_parent"
@@ -137,7 +143,7 @@
             android:textColor="#000"
             android:textStyle="normal"
             android:layout_alignParentLeft="true"
-            android:layout_below="@+id/radioButton7"
+            android:layout_below="@+id/radiogrp"
             android:layout_alignParentStart="true"
             />
         <EditText
@@ -343,5 +349,7 @@
             android:layout_below="@+id/editText10"
             android:background="#9EE17E"
             android:onClick="addContact"/>
+
+
     </RelativeLayout>
 </ScrollView>
