@@ -23,7 +23,7 @@ public class NomineeDBHelper  extends SQLiteOpenHelper{
 
     public NomineeDBHelper(Context context){
         super(context,DATABASE_NAME,null,DATABASE_VERSION);
-        Log.e("DATABASE OPERATIONS", "DATABASE CREATED/ OPENED ...");
+        Log.d("DATABASE OPERATIONS", "DATABASE CREATED/ OPENED ...");
 
 
 
@@ -32,7 +32,7 @@ public class NomineeDBHelper  extends SQLiteOpenHelper{
     public void onCreate(SQLiteDatabase db) {
 
         db.execSQL(CREATE_QUERY);
-        Log.e("DATABASE OPERATIONS", "TABLE CREATED...");
+        Log.d("DATABASE OPERATIONS", "TABLE CREATED...");
 
     }
     public void addInformation(String name, String occupation, String regno, String workplace, String county, SQLiteDatabase db){
@@ -43,12 +43,16 @@ public class NomineeDBHelper  extends SQLiteOpenHelper{
         contentValues.put(NomineeData.NewNomineeInfo.NOMINEE_WORKPLACE,workplace);
         contentValues.put(NomineeData.NewNomineeInfo.NOMINEE_COUNTY,county);
         db.insert(NomineeData.NewNomineeInfo.TABLE_NAME, null, contentValues);
-        Log.e("DATABASE OPERATIONS", "one row inserted...");
+        Log.d("DATABASE OPERATIONS", "one row inserted...");
     }
 
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
+//DROPS OLDER TABLE
+        db.execSQL("drop table if it exists" + NomineeData.NewNomineeInfo.TABLE_NAME);
+        //creates table again
+        onCreate(db);
     }
 }

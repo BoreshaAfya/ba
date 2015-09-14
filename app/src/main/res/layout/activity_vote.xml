@@ -94,7 +94,7 @@
         android:layout_alignParentStart="true"
         android:background="#9EE17E"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="40dp"/>
+        android:layout_marginBottom="70dp"/>
 
 
 </RelativeLayout>
