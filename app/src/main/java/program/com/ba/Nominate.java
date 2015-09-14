@@ -19,8 +19,9 @@ import android.widget.Toast;
 
 
 public class Nominate extends Activity {
-    EditText NomineeName,  NomineeRegNo, NomineeWorkplace, NomineeCounty;
+    EditText NomineeName,  NomineeRegNo, NomineeWorkplace;
     RadioGroup NomineeOccupation;
+    Spinner NomineeCounty;
     Context context=this;
     NomineeDBHelper nomineeDBHelper;
     SQLiteDatabase sqLiteDatabase;
@@ -35,7 +36,7 @@ public class Nominate extends Activity {
         NomineeOccupation=(RadioGroup)findViewById(R.id.radiogrp);
         NomineeRegNo=(EditText)findViewById(R.id.editText2);
         NomineeWorkplace=(EditText)findViewById(R.id.editText3);
-        NomineeCounty=(EditText)findViewById(R.id.editText7);
+        NomineeCounty=(Spinner)findViewById(R.id.county_spinner);
 
 
 
@@ -67,7 +68,7 @@ public class Nominate extends Activity {
             String occupation= ((RadioButton)findViewById(NomineeOccupation.getCheckedRadioButtonId())).getText().toString();
             String regno=NomineeRegNo.getText().toString();
             String workplace=NomineeWorkplace.getText().toString();
-            String county=  NomineeCounty.getText().toString();
+            String county=  NomineeCounty.getSelectedItem().toString();
             nomineeDBHelper =new NomineeDBHelper(context);
             sqLiteDatabase=nomineeDBHelper.getWritableDatabase();
             nomineeDBHelper.addInformation(name, occupation, regno, workplace, county, sqLiteDatabase);
